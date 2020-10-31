@@ -1,0 +1,53 @@
+<div class="container-fluid mt-4 usuario-font">
+    <div class="row mt-3 px-4">
+        <div class="col-3 d-flex bg-dark justify-content-center align-items-center">
+            <img class="usuario-img" width="250" src="ruby.png">
+        </div>
+        <div class="col-9 bg-light shadow-lg pt-3">
+            <div class="row">
+                <div class="col-3 text-dark"><h2 class="usuario-h2" ng-click="refresh()">Usuarios</h2></div>
+                <div class="col-6">
+                    <input ng-model="nome" class="usuario-input" type="text" placeholder="Pesquisar Usuario">
+                    <img ng-click="findByName()" width="30" height="30" src="lupa.png" class="p-1">
+                </div>
+                <div class="col-3">
+                    <button ng-click="criar()" class="usuario-new-button btn bg-dark text-white">Novo Usuario</button>
+                </div>
+            </div>
+            <div class="pt-2 px-3  row table-responsive">
+                <table class="table table-striped">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <th scope="col">CPF</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col"></th>
+                            <th scope="col">Data de Nascimento</th>
+                            <th scope="col">Email</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="usuario in usuarios">
+                            <td scope="col">{{usuario.cpf}}</td>
+                            <td colspan="2" scope="col">{{usuario.nome}}</td>
+                            <td scope="col">{{usuario.data_nascimento}}</td>
+                            <td colspan="2" scope="col">{{usuario.email}}</td>
+                            <td scope="col">
+                                <button ng-click="excluir(usuario.id)"  class="btn-sm bg-danger float-right">Excluir</button>
+                                <button ng-click="editar(usuario.id)" class="btn-sm bg-success float-right">Editar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        
+                    </tfoot>
+                </table>
+            </div>
+            <div class="row pb-4 px-3 d-flex justify-content-around">
+                <button class="btn bg-dark text-white" ng-click="previous()" ng-if="hasPrevious">Anterior</button>
+                <button class="btn bg-dark text-white" ng-click="next()" ng-if="hasNext">Proxima</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.usuario-font{
+    font-size: 15px;
+}
+.usuario-input{
+    width: 60%;
+    border: 0px solid transparent;
+    border-bottom: 1px solid rgb(154, 163, 165);
+    color: rgb(154, 163, 165);
+    font-style: italic;
+    transition: all .3s ease;
+}
+.usuario-input:focus{
+    width: 80%;
+}
+
+.usuario-new-button{
+    width: 65%;
+    transition: all .2s ease;
+}
+.usuario-new-button:hover{
+    width: 72%;
+}
+.usuario-h2:hover{
+    cursor: pointer;
+}
+.usuario-img{
+    animation: usuario-img 30s infinite;
+}
+
+@keyframes usuario-img{
+    0%{transform: scale(1)}
+    25%{transform: scale(1.3)}
+    50%{transform: rotate(1);}
+    75%{transform: rotate(180deg);}
+    100%{transform: rotate(0deg);}
+}
