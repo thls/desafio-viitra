@@ -53,6 +53,37 @@ module Api
             
         end
 
+        # Atualizar um usuario
+        def update
+            begin
+                if params[:data_nascimento] == nil
+                    return render json: {status: 'fail', message: "Date invalid."},status: :ok
+                end
+                Date.parse(params[:data_nascimento]);
+                
+                usuario = Usuario.find(params[:id]);
+                usuario_teste = Usuario.new(usuario_params);
+                telefone = Telefone.new(telefone_params);
+                endereco = Endereco.new(endereco_params);
+                
+                usuario_teste.telefone = telefone;
+                usuario_teste.endereco = endereco;
+
+                telefone.save! if telefone.invalid?
+                endereco.save! if endereco.invalid?
+                
+
+                usuario.update_attributes!(usuario_params);
+                usuario.telefone.update!(telefone_params);
+                usuario.endereco.update_attributes!(endereco_params);
+
+                render json: {status: 'success', message: "Usuario registrado com sucesso.",
+                                data: {usuario: usuario, telefone: usuario.telefone, endereco: usuario.endereco}}, status: :ok
+            rescue Exception => e
+                render json: {status: 'fail', message: e}, status: :ok
+            end    
+        end
+
         # Filtrando parametros
         private
         def usuario_params
