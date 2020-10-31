@@ -40,6 +40,10 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    angular-rails-templates (1.1.0)
+      railties (>= 4.2, < 7)
+      sprockets (>= 3.0, < 5)
+      tilt
     arel (8.0.0)
     bindex (0.8.1)
     builder (3.2.4)
@@ -154,6 +158,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  angular-rails-templates
   byebug
   capybara (>= 2.15)
   jbuilder (~> 2.5)

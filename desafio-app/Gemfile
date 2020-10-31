@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.21.0'
 # Para usar paginacao
 gem 'will_paginate', '~> 3.1.0'
+# Puxar templates sem a necessidade de Ajax
+gem 'angular-rails-templates'
 
 #--------FIM------------
 # Use Capistrano for deployment
