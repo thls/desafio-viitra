@@ -41,6 +41,18 @@ module Api
             end    
         end
 
+        # Excluir usuario
+        def destroy
+            begin
+                usuario = Usuario.find(params[:id])
+                usuario.destroy!
+                render json: {status: 'success', message:'Usuario removido com sucesso.', data:usuario},status: :ok
+                rescue Exception => e
+                    render json: {status: 'fail', message: e},status: :ok
+            end
+            
+        end
+
         # Filtrando parametros
         private
         def usuario_params
