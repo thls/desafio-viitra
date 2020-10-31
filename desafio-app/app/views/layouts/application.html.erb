@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DesafioApp</title>
+    <title>desafio-app</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body ng-app="desafio-app">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <img src="ruby.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <div class="d-inline-block font-italic">Ruby</div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-when-collapse" aria-controls="navbar-when-collapse" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar-when-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/usuarios">Usuarios<span class="sr-only">(página atual)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/cadastrar">Cadastrar-se</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar produto...">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
+      </form>
+    </div>
+  </nav>
+  <ng-view></ng-view>
+</body>
 </html>
