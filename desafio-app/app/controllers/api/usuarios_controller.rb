@@ -84,6 +84,14 @@ module Api
             end    
         end
 
+        # Buscar usuario que contém o parametro :name como substring no nome
+        def findByName
+            usuarios = Usuario.select('id', 'nome', 'cpf', 'email', 'data_nascimento')
+            .where('UPPER(nome) LIKE UPPER(:nome)',{:nome => '%' + params[:name] + '%'})
+            .paginate(page: params[:page], per_page: 12);
+            render json: {status: 'success', data: usuarios}, status: :ok
+        end
+
         # Filtrando parametros
         private
         def usuario_params
