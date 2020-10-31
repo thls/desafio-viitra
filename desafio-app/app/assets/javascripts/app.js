@@ -14,5 +14,9 @@ app.config(function($routeProvider, $locationProvider){
         templateUrl: 'usuarios/_usuarios.html',
         controller: 'UsuariosController'
     })
+    .when("/editar/:id", {
+        templateUrl: 'edicao/_edicao.html',
+        controller: 'EdicaoController'
+    })
     .otherwise({redirectTo: '/'});
 });
