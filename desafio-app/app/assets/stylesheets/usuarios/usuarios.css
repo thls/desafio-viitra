@@ -11,6 +11,7 @@
     color: rgb(154, 163, 165);
     font-style: italic;
     transition: all .3s ease;
+    outline: none;
 }
 .usuario-input:focus{
     width: 80%;

@@ -2,7 +2,7 @@ module Api
     class UsuariosController < ApplicationController
         # Listar todos os usuarios
         def index
-            usuarios = Usuario.page(params[:page]).per_page(6);
+            usuarios = Usuario.page(params[:page]).per_page(9);
             render json: {status: 'success', message:'Usuarios encontrados.', data:usuarios},status: :ok
         end
         
@@ -88,7 +88,7 @@ module Api
         def findByName
             usuarios = Usuario.select('id', 'nome', 'cpf', 'email', 'data_nascimento')
             .where('UPPER(nome) LIKE UPPER(:nome)',{:nome => '%' + params[:name] + '%'})
-            .paginate(page: params[:page], per_page: 6);
+            .paginate(page: params[:page], per_page: 9);
             render json: {status: 'success', data: usuarios}, status: :ok
         end
 
