@@ -1,18 +1,10 @@
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: 12345
-  timeout: 5000
-
 development:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
   database: desafio-app
-test:
-  <<: *default
-  database: desafio-app
-
-production:
-  <<: *default
-  database: desafio-app
+  pool: 5
+  username: root
+  password: 12345
+  host: localhost
+  port: 3306
