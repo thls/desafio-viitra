@@ -6,7 +6,6 @@ app.controller('CadastroController', function($scope, $http, $location){
     });
 
     $scope.carregaCidades = function(){
-        console.log($scope.uf);
         $http.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados/'+$scope.uf+'/distritos').then(res=>{
         $scope.cidades = res.data;
         });
