@@ -20,6 +20,8 @@ app.config(function($routeProvider, $locationProvider){
     }).when("/info/:id", {
         templateUrl: 'info/_info.html',
         controller: 'InfoController'
+    }).when("/", {
+        templateUrl: 'home/_home.html',
     })
     .otherwise({redirectTo: '/'});
 });
