@@ -1,5 +1,8 @@
+.usuario-td{
+    cursor: pointer;
+}
 .usuario-font{
-    font-size: 15px;
+    font-size: 12px;
 }
 .usuario-input{
     width: 60%;

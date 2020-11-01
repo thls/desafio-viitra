@@ -14,8 +14,8 @@
                     <button ng-click="criar()" class="usuario-new-button btn bg-dark text-white">Novo Usuario</button>
                 </div>
             </div>
-            <div class="pt-2 px-3  row table-responsive">
-                <table class="table table-striped">
+            <div class="pt-2 px-3 row table-responsive">
+                <table class="table table-sm table-striped">
                     <thead class="bg-dark text-white">
                         <tr>
                             <th scope="col">CPF</th>
@@ -30,10 +30,10 @@
                     <tbody>
                         <tr ng-repeat="usuario in usuarios">
                             
-                            <td ng-click="info(usuario.id)" scope="col">{{usuario.cpf}}</td>
-                            <td ng-click="info(usuario.id)" colspan="2" scope="col">{{usuario.nome}}</td>
-                            <td ng-click="info(usuario.id)" scope="col">{{usuario.data_nascimento}}</td>
-                            <td ng-click="info(usuario.id)" colspan="2" scope="col">{{usuario.email}}</td>
+                            <td class="usuario-td" ng-click="info(usuario.id)" scope="col">{{usuario.cpf}}</td>
+                            <td class="usuario-td" ng-click="info(usuario.id)" colspan="2" scope="col">{{usuario.nome}}</td>
+                            <td class="usuario-td" ng-click="info(usuario.id)" scope="col">{{usuario.data_nascimento}}</td>
+                            <td class="usuario-td" ng-click="info(usuario.id)" colspan="2" scope="col">{{usuario.email}}</td>
                             <td scope="col">
                                 <button ng-click="excluir(usuario.id)"  class="btn-sm bg-danger float-right">Excluir</button>
                                 <button ng-click="editar(usuario.id)" class="btn-sm bg-success float-right">Editar</button>
