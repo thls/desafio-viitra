@@ -71,5 +71,11 @@ app.controller('EdicaoController', function($scope, $http, $routeParams, $locati
             }
         })
     }
+    $scope.excluir = function(){
+        $http.delete('http://localhost:3000/api/usuarios/'+$routeParams.id).then((response)=>{
+            alert(response.data.message);
+           $location.path("/usuarios");
+        })
+    }
 
 });

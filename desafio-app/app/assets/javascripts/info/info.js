@@ -15,4 +15,10 @@ app.controller('InfoController', function($scope, $routeParams, $http, $location
     $scope.paraEdicao = function(){
         $location.path("/editar/"+$routeParams.id);
     }
+    $scope.excluir = function(){
+        $http.delete('http://localhost:3000/api/usuarios/'+$routeParams.id).then((response)=>{
+            alert(response.data.message);
+           $location.path("/usuarios");
+        })
+    }
 });
