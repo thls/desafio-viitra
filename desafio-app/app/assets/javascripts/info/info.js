@@ -5,6 +5,8 @@ app.controller('InfoController', function($scope, $routeParams, $http, $location
         $scope.nome = usuario.nome;
         $scope.cpf = usuario.cpf;
         $scope.data = new Date(usuario.data_nascimento);
+        // Ajustando fuso horário
+        $scope.data.setHours($scope.data.getHours()+3);
         $scope.email = usuario.email;
         $scope.telefone = res.data.data.telefone.numero;
         $scope.cep = res.data.data.endereco.cep;
