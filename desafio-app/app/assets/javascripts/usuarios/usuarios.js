@@ -28,6 +28,9 @@ app.controller('UsuariosController', function($http, $scope, $location){
     $scope.editar = function(id){
         $location.path('/editar/'+id);
     }
+    $scope.info = function(id){
+        $location.path('/info/'+id);
+    }
     $scope.criar = function(){
         $location.path('/cadastrar/');
     }
