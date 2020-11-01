@@ -5,13 +5,13 @@
         </div>
         <div class="col-9 bg-light shadow-lg pt-3">
             <div class="row">
-                <div class="col-3 text-dark"><h2 class="usuario-h2" ng-click="refresh()">Usuarios</h2></div>
+                <div class="col-3 text-dark"><h2 class="usuario-h2" ng-click="refresh()">Usuários</h2></div>
                 <div class="col-6">
-                    <input ng-model="nome" class="usuario-input" type="text" placeholder="Pesquisar Usuario">
+                    <input ng-model="nome" class="usuario-input" type="text" placeholder="Pesquisar Usuário">
                     <img ng-click="findByName()" width="30" height="30" src="lupa.png" class="p-1">
                 </div>
                 <div class="col-3">
-                    <button ng-click="criar()" class="usuario-new-button btn bg-dark text-white">Novo Usuario</button>
+                    <button ng-click="criar()" class="usuario-new-button btn bg-dark text-white">Novo Usuário</button>
                 </div>
             </div>
             <div class="pt-2 px-3 row table-responsive">
@@ -47,7 +47,7 @@
             </div>
             <div class="row pb-4 px-3 d-flex justify-content-around">
                 <button class="btn bg-dark text-white" ng-click="previous()" ng-if="hasPrevious">Anterior</button>
-                <button class="btn bg-dark text-white" ng-click="next()" ng-if="hasNext">Proxima</button>
+                <button class="btn bg-dark text-white" ng-click="next()" ng-if="hasNext">Próxima</button>
             </div>
         </div>
     </div>
